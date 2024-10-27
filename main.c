@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "maBib.h"
 #define prints(x)  for(int i=0; i < x; i++) printf(" ")
 #define  endl printf("\n")
@@ -34,7 +33,6 @@ int main()
          if(!(*station+i)){
             exit(-2);
          }
-
          (*(station+i))->id=rand();
          endl;prints(50);
          printf("Les details de la station Indice :  %d  \n",i+1);
@@ -42,31 +40,25 @@ int main()
          printf("Donner Le Name Station \n");
          prints(50);
          scanf("%s",(*(station+i))->name);
-
          prints(50);printf("Donner Le Nombre des Bornes De Recharge : \n");
          prints(50);scanf("%d",&(*(station+i))->nb_bornes);
-
         (*(station+i))->BorneDeRecharge=(BORNE_DE_RECHARGE*) malloc ( (*(station+i))->nb_bornes * sizeof(BORNE_DE_RECHARGE));
-
         for(int compt_borne=0;compt_borne<(*(station+i))->nb_bornes;compt_borne++){
                 (*( (*(station + i))->BorneDeRecharge + compt_borne)).id = rand();
                 endl;prints(50);printf("Details BORNE DE RECHARGE Avec Indice %d\n",  compt_borne+1);
                 prints(50);printf("-----------------------------\n");
-
                  prints(50);printf("Saisir Type  (0=Rapide, 1=Normal) \n");
                  int type;
                  prints(50);scanf("%d", &type);
                  (*( (*(station + i))->BorneDeRecharge + compt_borne)).type = type == 0 ? Rapide : Normal;
                  prints(50);printf("Saisir Puissance: \n");
                  prints(50);scanf("%d", &(*( (*(station + i))->BorneDeRecharge + compt_borne)).puissance);
-
                  prints(50); printf("Status (0=Disponible, 1=Occupe, 2=Hors_Service): \n");
                  int status;
                  prints(50);scanf("%d", &status);
                  (*( (*(station + i))->BorneDeRecharge + compt_borne)).status = (STATUS) status;
                  (*( (*(station + i))->BorneDeRecharge + compt_borne)).nb_reserves=0;
                  (*( (*(station + i))->BorneDeRecharge + compt_borne)).reserves=NULL;
-
                 prints(50);printf("-----------------------------\n");
         }
 
