@@ -1,4 +1,4 @@
-typedef struct Date{;
+typedef struct Date{
   int jour;
   int mois;
   int annee;
@@ -56,6 +56,23 @@ typedef struct Paiment{
   char Token[30];
 }PAIMENT;
 
+typedef struct Resultat{
+ char name[30];
+ int nbr_bornes;
+}RESULTAT;
 
-
-
+void trierStationsParBornes(STATION** , int );
+void entrer_date(DATE *);
+int EstDisponible(BORNE_DE_RECHARGE* );
+void afficherBornesDisponibles(STATION** , int );
+void RemplirBorneDeCharge(int,STATION*);
+void TableauBorneDeRecharge(int,STATION*);
+void init_paiment(PAIMENT* );
+void init_user(USER* );
+void afficher_date(DATE );
+void afficher_details_user(USER );
+int compare_dates(DATE , DATE );
+void afficher_details_paiment(PAIMENT* , int , int );
+USER* utilisateur_max_reservations(STATION** , int , DATE , DATE );
+double RecherchePaiementAvecId(int , PAIMENT* , int);
+RESERVATION* reservation_durable(STATION** , int ,PAIMENT* ,int );

@@ -1,9 +1,15 @@
 # depslib dependency file v1.0
-1730034431 source:c:\users\talel\desktop\projet_c\main.c
+1731536120 source:c:\users\talel\desktop\projet_c\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"maBib.h"
 
-1730032277 c:\users\talel\desktop\projet_c\mabib.h
+1731534640 c:\users\talel\desktop\projet_c\mabib.h
+
+1731536029 source:c:\users\talel\desktop\projet_c\mabib.c
+	"maBib.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 
